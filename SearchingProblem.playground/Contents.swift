@@ -28,10 +28,10 @@ class SearchingProblem{
 
 //MARK Factorial Calculator
 class FactorialCalculator{
-    var lastEntered:Int=0;
+    var lastEntered:Int=1;
     func Calculate(num:Int)->String{
         let result=num * lastEntered;
-        self.lastEntered = result == 0 ? num > 0 ? num : result : result;
+        self.lastEntered = result == 0 ? num > 0 ? num : 1 : result;
         return String(num)+" = "+String(lastEntered);
     }
 }
