@@ -35,15 +35,49 @@ class FactorialCalculator{
         return String(num)+" = "+String(lastEntered);
     }
 }
-let fcObject=FactorialCalculator();
-print(fcObject.Calculate(num: 0))
-print(fcObject.Calculate(num: 1))
-print(fcObject.Calculate(num: 2))
-print(fcObject.Calculate(num: 3))
-print(fcObject.Calculate(num: 4))
-print(fcObject.Calculate(num: 5))
-print(fcObject.Calculate(num: 6))
-print(fcObject.Calculate(num: 7))
+//let fcObject=FactorialCalculator();
+//print(fcObject.Calculate(num: 0))
+//print(fcObject.Calculate(num: 1))
+//print(fcObject.Calculate(num: 2))
+//print(fcObject.Calculate(num: 3))
+//print(fcObject.Calculate(num: 4))
+//print(fcObject.Calculate(num: 5))
+//print(fcObject.Calculate(num: 6))
+//print(fcObject.Calculate(num: 7))
+
+//MARK Binary To Decimal (Decimal to Binary)
+class BinaryToDecimal{
+    static func BtoDC(input:String)->Int{
+        var sum=0;
+        var index=0;
+        var result=0;
+        for item in input.reversed() {
+            result=index == 0 ? 1 : result * 2;
+            sum+=Int(String(item)) == 1 ? result : 0;
+            index+=1;
+        }
+        return sum;
+    }
+    static func DCToB(number:Int)->String{
+        var binary="";
+        var sum=number;
+        while sum > 0 {
+            let data=sum%2;
+            sum=sum/2;
+            binary.append("\(data)");
+        }
+        return String(binary.reversed());
+    }
+    
+    
+    
+}
+
+print(BinaryToDecimal.BtoDC(input: "11111"))
+print(BinaryToDecimal.BtoDC(input: "01111"))
+
+print(BinaryToDecimal.DCToB(number: 23));
+
 
 
 
